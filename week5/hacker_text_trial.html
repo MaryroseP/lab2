@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1 id="hacker_text" data-value="Hello World">Hello World</h1>
+
+    <script>
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const hackerTextElement = document.getElementById('hacker_text');
+
+        function animateText() {
+            let iterations = 0;
+            const interval = setInterval(() => {
+                hackerTextElement.innerText = hackerTextElement.innerText.split("")
+                    .map((letter, index) => {
+                        if (index < iterations) {
+                            return hackerTextElement.dataset.value[index];
+                        }
+                        return letters[Math.floor(Math.random() * 26)];
+                    })
+                    .join("");
+
+                if (iterations >= hackerTextElement.dataset.value.length) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        animateText(); // Call the function again after a delay
+                    }, 1000); // Adjust the delay as needed
+                }
+
+                iterations += 1;
+            }, 30);
+        }
+
+        // Initial call to start the animation
+        animateText();
+    </script>
+</body>
+</html>
