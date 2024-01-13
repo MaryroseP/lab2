@@ -9,11 +9,28 @@ body {
     font-family: courier;
 }
 
+.button {
+    background-color: rgb(54, 218, 54);
+    font-size: 2rem;
+    text-decoration: none;
+    width: 20%;
+    height: 13%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button a {
+    color: black;
+    text-decoration: none;
+}
+
 .first_page {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 20%;
 }
 
 .big_font {
