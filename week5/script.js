@@ -32,3 +32,43 @@
     }
     draw();
     setInterval(draw, 35);
+
+        // Hacker Text Starts Here
+
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+
+        class HackerText {
+            constructor(element) {
+                this.element = element;
+                this.iterations = 0;
+                this.startAnimation();
+            }
+
+            startAnimation() {
+                const interval = setInterval(() => {
+                    this.element.innerText = this.element.innerText.split("")
+                        .map((letter, index) => {
+                            if (index < this.iterations) {
+                                return this.element.dataset.value[index];
+                            }
+                            return letters[Math.floor(Math.random() * 26)];
+                        })
+                        .join("");
+
+                    if (this.iterations >= this.element.dataset.value.length) {
+                        clearInterval(interval);
+                        setTimeout(() => {
+                            this.iterations = 0;
+                            this.startAnimation();
+                        }, 1000);
+                    }
+
+                    this.iterations += 1;
+                }, 30);
+            }
+        }
+
+        // Apply the class to each element with the "hacker-text" class
+        const hackerTextElements = document.querySelectorAll('.hacker-text');
+        hackerTextElements.forEach(element => new HackerText(element));
+
