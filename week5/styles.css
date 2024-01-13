@@ -10,9 +10,10 @@ body {
 }
 
 .first_page {
-    margin-top: auto;
-    margin-bottom: auto;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
 }
 
 .big_font {
