@@ -70,3 +70,4 @@ class HackerText {
 // Apply the class to each element with the "hacker-text" class
 const hackerTextElements = document.querySelectorAll('.hacker-text');
 hackerTextElements.forEach(element => new HackerText(element));
+
