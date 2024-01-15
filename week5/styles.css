@@ -23,6 +23,9 @@ body {
     text-decoration: none;
 }
 
+a {
+    color: rgb(54, 218, 54);
+}
 .index_tab {
     display: flex;
 }
