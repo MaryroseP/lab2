@@ -122,4 +122,13 @@ class QuizManager {
           this.showScore();
         }
       }
-
+    // Function to check the user's answer
+    checkAnswer(userAnswer) {
+        const currentQuestion = this.quizData[this.currentQuestionIndex];
+        if (userAnswer === currentQuestion.correctAnswer) {
+          this.userScore++;
+        }
+        this.currentQuestionIndex++;
+        this.renderQuestion();
+      }
+    
