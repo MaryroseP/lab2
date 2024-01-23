@@ -132,3 +132,15 @@ class QuizManager {
         this.renderQuestion();
       }
     
+      showScore() {
+        const quizContainer = document.getElementById("quizContainer");
+        quizContainer.innerHTML = `
+          <h2>Quiz Completed</h2>
+          <p>Your Score: ${this.userScore} out of ${this.quizData.length}</p>
+        `;
+      }
+    }
+    
+    // Instantiate the QuizManager class
+    const quizManager = new QuizManager();
+    quizManager.startQuiz();  // Start the quiz  
