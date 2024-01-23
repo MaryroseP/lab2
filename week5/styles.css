@@ -152,6 +152,17 @@ h1, h2 {
     }
 }
 
+button {
+    background-color: black;
+    color: rgb(54, 218, 54);
+    font-family: courier;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
 /* Matrix animation styles */
 
 canvas {
@@ -159,4 +170,13 @@ canvas {
     top: 0;
     left: 0;
     z-index: -1;
+}
+
+#quizContainer {
+    background-color: black;
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    padding: 10px;
+
 }

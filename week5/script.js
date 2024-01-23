@@ -71,3 +71,55 @@ class HackerText {
 const hackerTextElements = document.querySelectorAll('.hacker-text');
 hackerTextElements.forEach(element => new HackerText(element));
 
+// Module for managing the quiz
+class QuizManager {
+    constructor() {
+      this.quizData = [];
+      this.userScore = 0;
+      this.currentQuestionIndex = 0;
+    }
+  
+    // Async function to fetch quiz data
+    async fetchQuizData() {
+      // Simulating fetching data from a server with a delay
+      return new Promise(resolve => {
+        setTimeout(() => {
+          // Objects: Representing quiz question with properties
+          resolve([
+            { question: "What is Maryrose's favorite color?", options: ["Red", "Green", "Orange", "Pink", "Black", "Mint Green"], correctAnswer: "Pink" },
+          ]);
+        }, 1000);
+      });
+    }
+  
+    // Function to start the quiz
+    startQuiz() {
+      // Using the async function to fetch quiz data
+      this.fetchQuizData().then(data => {
+        this.quizData = data;
+        this.renderQuestion();
+      });
+    }
+  
+
+    // Init Function
+    renderQuestion() {
+        const quizContainer = document.getElementById("quizContainer");
+        quizContainer.innerHTML = '';
+    
+        if (this.currentQuestionIndex < this.quizData.length) {
+          // Objects: Representing the current quiz question
+          const currentQuestion = this.quizData[this.currentQuestionIndex];
+          const questionElement = document.createElement('div');
+          questionElement.innerHTML = `
+            <h2>${currentQuestion.question}</h2>
+            <ul>
+              ${currentQuestion.options.map(option => `<li><button onclick="quizManager.checkAnswer('${option}')">${option}</button></li>`).join('')}
+            </ul>
+          `;
+          quizContainer.appendChild(questionElement);
+        } else {
+          this.showScore();
+        }
+      }
+
