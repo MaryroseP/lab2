@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Welcome, user.</title>
+    <title>Welcome, USER.</title>
 </head>
 <body>
-    
-    <?php
-    echo "Maryrose Pergis was here!";
-    ?>
 
+<?php
+$x = "Wow is this text? As a variable? Sick!";
+$num1 = 3;
+$num2 = 5;
+
+echo $x;
+?>
+    
     <div class="first_page">
         <h1 class="big_font">Hello and welcome, <span class="hacker-text" data-value="USER">USER</span></h1>
     </div>
