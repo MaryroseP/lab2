@@ -11,12 +11,15 @@
 
 <?php
 $x = "Wow is this text? As a variable? Sick!";
-$num1 = 3;
+$num1 = (rand(10, 100));
 $num2 = 5;
 $num3 = 4.76;
+
 var_dump($x);
 var_dump($num1);
 var_dump($num3);
+
+echo(round($num3));
 ?>
     
     <div class="first_page">
