@@ -12,15 +12,26 @@
 <?php
 $x = "Wow is this text? As a variable? Sick!";
 $num1 = (rand(10, 100));
-$num2 = 5;
+$num2 = 1;
 $num3 = 4.76;
-
 var_dump($x);
 var_dump($num1);
 var_dump($num3);
-
 echo(round($num3));
+
+$numbers = array(2, $num1, 5, 12, 20);
+
+foreach ($numbers as $num) {
+    if ($num < 5) {
+        echo "<p>$num is less than 5</p>";
+    } elseif ($num == 5) {
+        echo "<p>$num is equal to 5</p>";
+    } else {
+        echo "<p>$num is greater than 5</p>";
+    }
+}
 ?>
+
     
     <div class="first_page">
         <h1 class="big_font">Hello and welcome, <span class="hacker-text" data-value="USER">USER</span></h1>
