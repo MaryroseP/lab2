@@ -13,8 +13,10 @@
 $x = "Wow is this text? As a variable? Sick!";
 $num1 = 3;
 $num2 = 5;
-
-echo $x;
+$num3 = 4.76;
+var_dump($x);
+var_dump($num1);
+var_dump($num3);
 ?>
     
     <div class="first_page">
