@@ -104,7 +104,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('Chain', 'Sia', 'blenderman@example.com')";
+VALUES ('$name', '$website', '$email')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
